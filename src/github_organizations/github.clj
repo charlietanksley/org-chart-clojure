@@ -1,6 +1,7 @@
 (ns github-organizations.github
   (:use [clojure.string :only [join]])
-  (:require [clj-http.client :as client]))
+  (:require [clj-http.client :as client]
+            [clojure.data.json :as json]))
 
 (defn organization-members
   "Get all the members of an organization."
