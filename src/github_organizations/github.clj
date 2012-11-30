@@ -12,7 +12,7 @@
     (json/read-str body
                    :key-fn keyword)))
 
-(defn organizations-by-member
+(defn organizations-for-member
   "Get all the organizations a member belongs to."
   [member]
   (let [{body :body
@@ -20,4 +20,3 @@
         (client/get (join "/" ["https://api.github.com/users" member "orgs"]))]
     (json/read-str body
                    :key-fn keyword)))
-
