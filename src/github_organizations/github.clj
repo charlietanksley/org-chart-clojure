@@ -20,7 +20,7 @@
 
 (defn organizations-for-member
   "Get all the organizations a member belongs to, with all the
-  attendant information, in JSON."
+  attendant information Github provides, in JSON."
   [member]
   (let [{body :body
          headers :headers}
