@@ -1,6 +1,26 @@
 (ns github-organizations.users
   (:use [github-organizations.github]))
 
+(defn information-on-a-user
+  [single-user-hash]
+  (let [{login :login
+         url :url
+         avatar_url :avatar_url}
+        single-user-hash]
+    {:login login
+     :url url
+     :avatar_url avatar_url}))
+
+(defn information-on-an-organization
+  [single-organization-hash]
+  (let [{login :login
+         url :url
+         avatar_url :avatar_url}
+        single-organization-hash]
+    {:login login
+     :url url
+     :avatar_url avatar_url}))
+
 (defn organizations-for-all-members
   "Get a hash of all the organizations for all the members."
   [member-hash]
