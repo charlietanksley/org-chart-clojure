@@ -3,23 +3,13 @@
 
 (defn information-on-a-user
   [single-user-hash]
-  (let [{login :login
-         url :url
-         avatar_url :avatar_url}
-        single-user-hash]
-    {:login login
-     :url url
-     :avatar_url avatar_url}))
+  (select-keys single-user-hash
+               [:login :url :avatar_url]))
 
 (defn information-on-an-organization
   [single-organization-hash]
-  (let [{login :login
-         url :url
-         avatar_url :avatar_url}
-        single-organization-hash]
-    {:login login
-     :url url
-     :avatar_url avatar_url}))
+  (select-keys single-organization-hash
+               [:login :url :avatar_url]))
 
 (def sample-members-in-organization
   [{:following_url "https://api.github.com/users/ryanwood/following", :gists_url "https://api.github.com/users/ryanwood/gists{/gist_id}", :starred_url "https://api.github.com/users/ryanwood/starred{/owner}{/repo}", :followers_url "https://api.github.com/users/ryanwood/followers", :gravatar_id "e37ca8b3eee534fa6781f7ba13743afb", :avatar_url "https://secure.gravatar.com/avatar/e37ca8b3eee534fa6781f7ba13743afb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", :received_events_url "https://api.github.com/users/ryanwood/received_events", :login "ryanwood", :url "https://api.github.com/users/ryanwood", :organizations_url "https://api.github.com/users/ryanwood/orgs", :events_url "https://api.github.com/users/ryanwood/events{/privacy}", :repos_url "https://api.github.com/users/ryanwood/repos", :id 8504, :subscriptions_url "https://api.github.com/users/ryanwood/subscriptions"} {:following_url "https://api.github.com/users/pnc/following", :gists_url "https://api.github.com/users/pnc/gists{/gist_id}", :starred_url "https://api.github.com/users/pnc/starred{/owner}{/repo}", :followers_url "https://api.github.com/users/pnc/followers", :gravatar_id "106e991aff47a77919601a41770ea734", :avatar_url "https://secure.gravatar.com/avatar/106e991aff47a77919601a41770ea734?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", :received_events_url "https://api.github.com/users/pnc/received_events", :login "pnc", :url "https://api.github.com/users/pnc", :organizations_url "https://api.github.com/users/pnc/orgs", :events_url "https://api.github.com/users/pnc/events{/privacy}", :repos_url "https://api.github.com/users/pnc/repos", :id 108524, :subscriptions_url "https://api.github.com/users/pnc/subscriptions"} {:following_url "https://api.github.com/users/jcoleman/following", :gists_url "https://api.github.com/users/jcoleman/gists{/gist_id}", :starred_url "https://api.github.com/users/jcoleman/starred{/owner}{/repo}", :followers_url "https://api.github.com/users/jcoleman/followers", :gravatar_id "d8d5058aa91cd439f1f486f93f8eb564", :avatar_url "https://secure.gravatar.com/avatar/d8d5058aa91cd439f1f486f93f8eb564?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", :received_events_url "https://api.github.com/users/jcoleman/received_events", :login "jcoleman", :url "https://api.github.com/users/jcoleman", :organizations_url "https://api.github.com/users/jcoleman/orgs", :events_url "https://api.github.com/users/jcoleman/events{/privacy}", :repos_url "https://api.github.com/users/jcoleman/repos", :id 125331, :subscriptions_url "https://api.github.com/users/jcoleman/subscriptions"} {:following_url "https://api.github.com/users/charlietanksley/following", :gists_url "https://api.github.com/users/charlietanksley/gists{/gist_id}", :starred_url "https://api.github.com/users/charlietanksley/starred{/owner}{/repo}", :followers_url "https://api.github.com/users/charlietanksley/followers", :gravatar_id "262e2db6c19a4f38980e2c4076c1f5a8", :avatar_url "https://secure.gravatar.com/avatar/262e2db6c19a4f38980e2c4076c1f5a8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", :received_events_url "https://api.github.com/users/charlietanksley/received_events", :login "charlietanksley", :url "https://api.github.com/users/charlietanksley", :organizations_url "https://api.github.com/users/charlietanksley/orgs", :events_url "https://api.github.com/users/charlietanksley/events{/privacy}", :repos_url "https://api.github.com/users/charlietanksley/repos", :id 217287, :subscriptions_url "https://api.github.com/users/charlietanksley/subscriptions"} {:following_url "https://api.github.com/users/masondesu/following", :gists_url "https://api.github.com/users/masondesu/gists{/gist_id}", :starred_url "https://api.github.com/users/masondesu/starred{/owner}{/repo}", :followers_url "https://api.github.com/users/masondesu/followers", :gravatar_id "091bc95204caaf52b0d299bd9ac59540", :avatar_url "https://secure.gravatar.com/avatar/091bc95204caaf52b0d299bd9ac59540?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", :received_events_url "https://api.github.com/users/masondesu/received_events", :login "masondesu", :url "https://api.github.com/users/masondesu", :organizations_url "https://api.github.com/users/masondesu/orgs", :events_url "https://api.github.com/users/masondesu/events{/privacy}", :repos_url "https://api.github.com/users/masondesu/repos", :id 434750, :subscriptions_url "https://api.github.com/users/masondesu/subscriptions"}])
