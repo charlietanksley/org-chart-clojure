@@ -27,3 +27,12 @@
         (client/get (api-call "users" member "orgs"))]
     (json/read-str body
                    :key-fn keyword)))
+
+(defn full-information-on-organization
+  "Get the information from Github on the organization."
+  [organization-name]
+  (let [{body :body}
+        (client/get (api-call "orgs" organization-name))]
+    (select-keys (json/read-str body
+                                :key-fn keyword)
+                 [:name :avatar_url :location :html_url :url])))
