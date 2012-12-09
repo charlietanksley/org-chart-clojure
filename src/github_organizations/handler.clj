@@ -8,7 +8,7 @@
 
 (defroutes app-routes
   (GET "/" [] "Hello World")
-  (GET "/api/:organization" [organization]
+  (GET "/api/:organization.json" [organization]
        (let [response {:organization (github/full-information-on-organization organization)
                        :members (github/members-in-organization organization)
                        :related-orgnizations (users/all-organizations-for-all-users organization)}]
