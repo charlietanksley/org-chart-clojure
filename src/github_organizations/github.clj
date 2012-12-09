@@ -5,8 +5,8 @@
 
 (defn api-call
   "Construct the url for the api call."
-  [class variable end-point]
-  (join "/" (cons "https://api.github.com" [class variable end-point])))
+  [& args]
+  (join "/" (cons "https://api.github.com" args)))
 
 (defn members-in-organization
   "Get all the members of an organization, as Github returns that data
