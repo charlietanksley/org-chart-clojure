@@ -10,4 +10,8 @@
   :plugins [[lein-ring "0.7.5"]]
   :ring {:handler org-chart.handler/app}
   :profiles
-  {:dev {:dependencies [[ring-mock "0.1.3"]]}})
+  {:dev {:dependencies [[ring-mock "0.1.3"]]}
+   :production {:misc "configuration"
+             :mirrors {#"central|clojars"
+                       "http://s3pository.herokuapp.com/clojure"}}})
+
