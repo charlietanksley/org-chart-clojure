@@ -1,4 +1,4 @@
-(ns github-organizations.github
+(ns org-chart.github
   (:use [clojure.string :only [join]])
   (:require [clj-http.client :as client]
             [clojure.data.json :as json]))

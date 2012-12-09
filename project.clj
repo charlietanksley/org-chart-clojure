@@ -1,5 +1,5 @@
-(defproject github-organizations "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
+(defproject org-chart "0.1.0-SNAPSHOT"
+  :description "See relations among organizations on Github."
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [compojure "1.1.3"]
@@ -7,6 +7,6 @@
                  [org.clojure/data.json "0.2.0"]
                  ]
   :plugins [[lein-ring "0.7.5"]]
-  :ring {:handler github-organizations.handler/app}
+  :ring {:handler org-chart.handler/app}
   :profiles
   {:dev {:dependencies [[ring-mock "0.1.3"]]}})

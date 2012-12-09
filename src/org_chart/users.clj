@@ -1,5 +1,5 @@
-(ns github-organizations.users
-  (:use [github-organizations.github]))
+(ns org-chart.users
+  (:use [org-chart.github]))
 
 (defn information-on-a-user
   "Extract the information we care about from the map on a user Github

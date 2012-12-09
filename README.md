@@ -1,8 +1,10 @@
-# github-organizations
+# Org-chart (Clojure)
 
-Github-organizations is a simple api to show the organizational
+Org-chart is a simple api to show the organizational
 connections between individuals (e.g., show what other organizations
 members of a given organization are members of).
+
+This particular implementation is written in Clojure.
 
 ## Prerequisites
 
