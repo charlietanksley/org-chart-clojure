@@ -1,1 +1,1 @@
-web: lein with-profile offline,production trampoline ring server
+web: lein with-profile production trampoline ring server
