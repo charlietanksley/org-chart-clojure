@@ -2,16 +2,21 @@
   (:use [github-organizations.github]))
 
 (defn information-on-a-user
+  "Extract the information we care about from the map on a user Github
+  gives us."
   [single-user-hash]
   (select-keys single-user-hash
                [:login :url :avatar_url]))
 
 (defn information-on-an-organization
+  "Extract the information we care about from the map on an
+organizations Github gives us."
   [single-organization-hash]
   (select-keys single-organization-hash
                [:login :url :avatar_url]))
 
 (defn all-organizations-for-user
+  "Get all the organizations a user belongs to."
   [single-user-hash]
   (let [{login :login} (information-on-a-user single-user-hash)]
     (map information-on-an-organization
@@ -21,6 +26,9 @@
 ; logins or have the logins inserted or something.
 
 (defn all-organizations-for-all-users
+  "Get all the organizations that all the members of an organization
+belong to, insert the login of the user (so we can identify who goes
+with which group, and return everything as one list."
   [organization-name]
   (let [members (map information-on-a-user
                      (members-in-organization organization-name))
