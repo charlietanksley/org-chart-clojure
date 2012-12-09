@@ -6,6 +6,7 @@
                  [clj-http "0.5.8"]
                  [org.clojure/data.json "0.2.0"]
                  ]
+  :min-lein-version "2.0.0"
   :plugins [[lein-ring "0.7.5"]]
   :ring {:handler org-chart.handler/app}
   :profiles
