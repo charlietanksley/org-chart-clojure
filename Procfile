@@ -1,1 +1,1 @@
-web: lein with-profile offline,production trampoline run -m org-chart.handler
+web: lein with-profile production trampoline run -m org-chart.handler
